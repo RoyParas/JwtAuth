@@ -38,25 +38,13 @@ dotnet restore
 
 Since `appsettings.json` is ignored in Git (for security), create it manually based on the following template:
 
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=JwtAuthDb;Trusted_Connection=True;TrustServerCertificate=True;"
-  },
-  "Jwt": {
-    "Key": "your_super_secret_key",
-    "Issuer": "your_app_name",
-    "Audience": "your_app_name"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*"
-}
+You can use appsettings.json.example as a base.
+So the step is:
+
+```bash
+cp appsettings.json.example appsettings.json
 ```
+Or just manually create the file using the example.
 
 > 🔐 Make sure to replace placeholders with your actual configuration.
 
@@ -81,7 +69,7 @@ dotnet run
 The API will be available at:
 
 ```
-https://localhost:5001
+http://localhost:5130
 ```
 
 ---
@@ -89,34 +77,5 @@ https://localhost:5001
 ## 🧪 Testing the API
 
 You can test the endpoints using:
-- **Swagger UI** at `https://localhost:5001/swagger` (if enabled)
+- **Swagger UI** at `https://localhost:5130/swagger` (if enabled)
 - **Postman**, **curl**, or any other API testing tool
-
----
-
-## 📁 Project Structure
-
-```
-JwtAuth/
-├── Controllers/            # API endpoints
-├── Models/                 # Data models
-├── DataContext/            # DB context and config
-├── Migrations/             # EF Core migrations
-├── Properties/
-├── JwtAuth.csproj          # Project file (required)
-├── JwtAuth.sln             # Solution file (recommended)
-├── Program.cs              # App entry point
-└── appsettings.json        # Ignored in Git
-```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## ✨ Author
-
-- [Your Name](https://github.com/your-username)
