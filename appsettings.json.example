@@ -1,0 +1,17 @@
+{
+  "Jwt":{
+    "Issuer" : "issuer who issues the key(example the server)",
+    "Audience" : "for whom the key is issued",
+    "Secret": "Your_Secret_Key"
+  },
+  "ConnectionStrings": {
+    "DBConnection": "Server=Your_Server_Name;Database=Your_Database_Name;Integrated Security=True;TrustServerCertificate=True;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
